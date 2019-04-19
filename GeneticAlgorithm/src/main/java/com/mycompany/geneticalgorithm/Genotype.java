@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  */
 public class Genotype {
 
-    static int sampleLength = 10;
+    static int sampleLength = 80;
     private static Random r = new Random();
     CompletableFuture<String> completableFuture = new CompletableFuture<>();
     Generator generator = new Generator();
@@ -77,7 +77,7 @@ public class Genotype {
 
         }
         long endTime = System.nanoTime();
-        System.out.println("Time taken for find the super human genome is " + (endTime - startTime));
+        System.out.println("Time taken for finding the super human genome is " + (endTime - startTime));
     }
 
     /**
@@ -118,7 +118,7 @@ public class Genotype {
                                 double rankvalue = generator.generatePhenotype(genotypePopulation.get(randomperson1), genotypePopulation.get(randomperson2));
                                 if (generator.isFit(rankvalue)) {
                                     String child = genotypePopulation.get(randomperson1).getPersonID() + genotypePopulation.get(randomperson2).getPersonID();
-                                    System.out.println(child);
+                                    System.out.println("Person having super genes   "+child);
                                     break;
                                 } else {
                                     Person person = new Person();
@@ -151,7 +151,7 @@ public class Genotype {
                                 double rankvalue = generator.generatePhenotype(genotypePopulation.get(randomperson1), genotypePopulation.get(randomperson2));
                                 if (generator.isFit(rankvalue)) {
                                     String child = genotypePopulation.get(randomperson1).getPersonID() + genotypePopulation.get(randomperson2).getPersonID();
-                                    System.out.println(child);
+                                    System.out.println("Person having super genes   "+child);
                                     break;
                                 } else {
                                     Person person = new Person();
@@ -178,6 +178,5 @@ public class Genotype {
                     }
                     return temp;
                 }, forkJoinPool);
-
     }
 }
